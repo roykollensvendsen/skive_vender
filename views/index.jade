@@ -1,0 +1,69 @@
+doctype html
+html
+   head
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      
+      // Stylesheets
+      link(rel="stylesheet", href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
+      link(rel="stylesheet", href="/stylesheets/style.css")
+
+      // Javascripts
+      script(src="http://code.jquery.com/jquery-1.11.3.min.js")
+      script(src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
+      script(src="/flip/dist/jquery.flip.js")
+      script(src="/javascripts/skiveVender.js")
+      
+   body
+      div(data-role="page", id="pageone", data-theme="b")
+
+         // Header
+         div(data-role="header")
+            h1#header Skive-vender
+
+         // Main
+         div(data-role="content", class="ui-content")
+
+            div#tabs(data-role="tabs")
+               // Navbar
+               div(data-role="navbar")
+                  ul
+                     li
+                        a#a_skyting(href="#skyting") Skyting
+                     li
+                        a(href="#instillinger") Instillinger
+               
+               // Instillinger
+               div#instillinger
+                  div        
+                     label(for="select_time") Tid fremme:
+                     select#select-time(name="select-time")
+                        option(value="3") 3 sekunder
+                        option(value="5") 5 sekunder
+                        option(value="10") 10 sekunder
+                     label(for="select_time") Repetisjoner:
+                     select#select-reps(name="select-reps")
+                        option(value="1") 1 gang
+                        option(value="5") 5 ganger
+
+               // Skyting
+               div#skyting
+                  div#target_container.ui-grid-a
+                     div#target.ui-block-a
+                        div.front           
+                           img#front_img(src="/images/target.png")
+                        div.back
+                           div#back_img
+
+                  div.ui-grid-b
+                     div.ui-block-a
+                        input#start(type="button", value="Start")
+                     div.ui-block-b
+                        input#stop(type="button", value="Stopp")
+                     div.ui-block-c
+                        input#jump(type="button", value="Hopp")
+
+         // Footer
+         div(data-role="footer", data-position="fixed", data-tap-toggle="false")    
+            h1 &copy Roy Kollen Svendsen
+
+

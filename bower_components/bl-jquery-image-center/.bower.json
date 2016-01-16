@@ -1,0 +1,15 @@
+{
+  "name": "bl-jquery-image-center",
+  "homepage": "https://github.com/boxlight/bl-jquery-image-center",
+  "version": "1.0.4",
+  "_release": "1.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.4",
+    "commit": "d8945ab62dcd4b6e9f46d7cf7b1777bc4f3ff17f"
+  },
+  "_source": "git://github.com/boxlight/bl-jquery-image-center.git",
+  "_target": "~1.0.4",
+  "_originalSource": "bl-jquery-image-center",
+  "_direct": true
+}
