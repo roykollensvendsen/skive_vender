@@ -31,16 +31,26 @@ $(document).ready(function(){
    $("#a_skyting").click(centerTarget);
 
    $("#start").click(function(){
+      var skyteprogram = [{timeout : 1000, show : true}, 
+                          {timeout : 2000, show : false},
+                          {timeout : 3000, show : true},
+                          {timeout : 4000, show : false}];
       var seq = {
-         timers : [{timeout : 1000, show : true}, 
-                   {timeout : 2000, show : false},
-                   {timeout : 3000, show : true},
-                   {timeout : 4000, show : false}],
+         timers : skyteprogram,
          flip: function(show){
                   $("#target").flip(show); 
                }
       };
-      runTimerSeq(seq);         
+      $.ajax({
+         url: '/users',
+         type: 'post',
+         data: {one : {timeout: 1000, show: true }},
+         dataType: "json",
+         success: function(items){
+            
+         }
+      });
+      runTimerSeq(seq);
    });
 
 });
