@@ -35,15 +35,24 @@ html
                // Instillinger
                div#instillinger
                   div        
+                     label(for="select_time") Tid før skyting:
+                     select#select-prologe(name="select-prologe")
+                        option(value=5) 5 sekunder til skyting
+                        option(value=60) 60 sekunder til skyting
                      label(for="select_time") Tid fremme:
                      select#select-time(name="select-time")
-                        option(value="3") 3 sekunder
-                        option(value="5") 5 sekunder
-                        option(value="10") 10 sekunder
+                        option(value=3) 3 sekunder
+                        option(value=4) 4 sekunder
+                        option(value=6) 6 sekunder
+                        option(value=8) 8 sekunder
+                        option(value=10) 10 sekunder
+                        option(value=20) 20 sekunder
+                        option(value=150) 150 sekunder
+                        option(value=300) 300 sekunder
                      label(for="select_time") Repetisjoner:
                      select#select-reps(name="select-reps")
-                        option(value="1") 1 gang
-                        option(value="5") 5 ganger
+                        option(value=1) 1 gang
+                        option(value=5) 5 ganger
 
                // Skyting
                div#skyting
@@ -54,13 +63,11 @@ html
                         div.back
                            div#back_img
 
-                  div.ui-grid-b
+                  div.ui-grid-a
                      div.ui-block-a
-                        input#start(type="button", value="Start")
+                        input#start(type="button", data-icon="check", value="Start")
                      div.ui-block-b
-                        input#stop(type="button", value="Stopp")
-                     div.ui-block-c
-                        input#jump(type="button", value="Hopp")
+                        input#stop(type="button", data-icon="delete", value="Stopp")
 
          // Footer
          div(data-role="footer", data-position="fixed", data-tap-toggle="false")    
