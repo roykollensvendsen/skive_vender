@@ -1,3 +1,25 @@
+var counter = (function () {
+   var internal_counter;
+   var interval;
+   return {
+      start: function () {
+         internal_counter = 1;
+         interval = setInterval(function () {
+            $("#counter").text(internal_counter);
+            internal_counter++;
+         }, 1000);
+      },
+      restart: function () {
+         internal_counter = 1;
+      },
+      stop: function () {
+         clearInterval(interval);
+         internal_counter = 1;
+         $("#counter").text("");
+      }
+   };
+})();
+
 var advanced_timer = (function () {
    var my = this;
    my.timeouts = [];
@@ -34,9 +56,11 @@ var target = (function () {
       },
       showMe: function () {
          $("#target").flip(false); 
+         counter.restart();
       },
       hideMe: function () {
          $("#target").flip(true); 
+         counter.restart();
       },
       toggleMe: function () {
          $("#target").flip(); 
@@ -45,6 +69,10 @@ var target = (function () {
 })();
 
 var target_turner = (function () {
+   var end = function () {
+      target.showMe();
+      counter.stop();
+   };
    return {
       run: function (config) {
          advanced_timer.clearAllTimeouts();
@@ -68,7 +96,7 @@ var target_turner = (function () {
          };
 
          program.push({
-            callback: target.showMe,
+            callback: end,
             timeout: delay += config.hide_after * 1000
          });
          
@@ -89,6 +117,8 @@ $(document).ready(function () {
    $("#a_skyting").click(target.centerMe);
 
    $("#start").click(function () {
+      counter.restart();
+      counter.start();
       var program = {
             show_before: $("#select-prologe").val(),
             hide_time: 7,
@@ -109,6 +139,7 @@ $(document).ready(function () {
    });
 
    $("#stop").click(function () {
+      counter.stop();
       var program = {
             show_before: 0,
             hide_time: 0,

@@ -4,12 +4,15 @@ html
       meta(name="viewport", content="width=device-width, initial-scale=1")
       
       // Stylesheets
-      link(rel="stylesheet", href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
+      //link(rel="stylesheet", href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
+      link(rel="stylesheet", href="/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css")
       link(rel="stylesheet", href="/stylesheets/style.css")
 
       // Javascripts
-      script(src="http://code.jquery.com/jquery-1.11.3.min.js")
-      script(src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
+      //script(src="http://code.jquery.com/jquery-1.11.3.min.js")
+      script(src="/jquery/jquery.min.js")
+      //script(src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
+      script(src="/jquery-mobile-bower/js/jquery.mobile-1.4.5.js")
       script(src="/flip/dist/jquery.flip.js")
       script(src="/javascripts/skiveVender.js")
       
@@ -37,7 +40,7 @@ html
                   div        
                      label(for="select_time") Tid før skyting:
                      select#select-prologe(name="select-prologe")
-                        option(value=5) 5 sekunder til skyting
+                        option(value=10) 10 sekunder til skyting
                         option(value=60) 60 sekunder til skyting
                      label(for="select_time") Tid fremme:
                      select#select-time(name="select-time")
@@ -68,6 +71,11 @@ html
                         input#start(type="button", data-icon="check", value="Start")
                      div.ui-block-b
                         input#stop(type="button", data-icon="delete", value="Stopp")
+
+                  div.ui-grid-a
+                     div.ui-block-b
+                            label#counter
+
 
          // Footer
          div(data-role="footer", data-position="fixed", data-tap-toggle="false")    
