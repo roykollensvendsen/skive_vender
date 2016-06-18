@@ -165,7 +165,7 @@ function getTimes(time, reps){
    for (var i = 0; i < reps; i++){
       if (time == 99999)
       {
-         times[i] = Math.random() * (13 - 9) + 9
+         times[i] = Math.random() * (12 - 3) + 3
          continue;
       }
       times[i] = time;
