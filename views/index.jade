@@ -42,8 +42,12 @@ html
                      select#select-prologe(name="select-prologe")
                         option(value=10) 10 sekunder til skyting
                         option(value=60) 60 sekunder til skyting
+                     label(for="select_time") Tid borte:
+                     select#select-hide-time(name="select-hide-time")
+                        option(value=7) 7 sekunder
+                        option(value=99999) 9-12 sek. tilfeldig
                      label(for="select_time") Tid fremme:
-                     select#select-time(name="select-time")
+                     select#select-show-time(name="select-show-time")
                         option(value=3) 3 sekunder
                         option(value=4) 4 sekunder
                         option(value=6) 6 sekunder
@@ -52,6 +56,7 @@ html
                         option(value=20) 20 sekunder
                         option(value=150) 150 sekunder
                         option(value=300) 300 sekunder
+                        option(value=99999) 9-12 sek. tilfeldig
                      label(for="select_time") Repetisjoner:
                      select#select-reps(name="select-reps")
                         option(value=1) 1 gang

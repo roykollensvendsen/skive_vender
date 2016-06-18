@@ -87,11 +87,11 @@ var target_turner = (function () {
          for (var i = 0; i < config.repetitions; i++) {
             program.push({
                callback: target.showMe,
-               timeout: delay += config.hide_time * 1000
+               timeout: delay += config.hide_times[i] * 1000
             });
             program.push({
                callback: target.hideMe,
-               timeout: delay += config.show_time * 1000
+               timeout: delay += config.show_times[i] * 1000
             });
          };
 
@@ -121,8 +121,8 @@ $(document).ready(function () {
       counter.start();
       var program = {
             show_before: $("#select-prologe").val(),
-            hide_time: 7,
-            show_time: $("#select-time").val(),
+            hide_times: getTimes($("#select-hide-time").val(), $("#select-reps").val()),
+            show_times: getTimes($("#select-show-time").val(), $("#select-reps").val()),
             repetitions: $("#select-reps").val(),
             hide_after: 15
       };  
@@ -142,8 +142,8 @@ $(document).ready(function () {
       counter.stop();
       var program = {
             show_before: 0,
-            hide_time: 0,
-            show_time: 0,
+            hide_times: [],
+            show_times: [],
             repetitions: 0,
             hide_after: 0
       };  
@@ -159,6 +159,19 @@ $(document).ready(function () {
       target_turner.run(program);
    });
 });
+
+function getTimes(time, reps){
+   var times = [];
+   for (var i = 0; i < reps; i++){
+      if (time == 99999)
+      {
+         times[i] = Math.random() * (13 - 9) + 9
+         continue;
+      }
+      times[i] = time;
+   }
+   return times;
+}
 
 /* 
  * Fin- & grovpistol presisjon
