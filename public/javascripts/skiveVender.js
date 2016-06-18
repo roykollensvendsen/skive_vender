@@ -5,7 +5,7 @@ var counter = (function () {
       start: function () {
          internal_counter = 1;
          interval = setInterval(function () {
-            $("#counter").text(internal_counter);
+            $("#start").val("Start(" + internal_counter + ")").button("refresh");
             internal_counter++;
          }, 1000);
       },
@@ -15,7 +15,7 @@ var counter = (function () {
       stop: function () {
          clearInterval(interval);
          internal_counter = 1;
-         $("#counter").text("");
+         $("#start").val("Start").button("refresh");
       }
    };
 })();

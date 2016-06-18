@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -8,11 +8,11 @@ a {
 }
 
 #target_container {
-   width: 60%;
+   width: 50%;
 }
 
 #target {
-   width: 60%;
+   width: 50%;
    margin-top: 10px;
 }
 
@@ -22,7 +22,11 @@ a {
 
 #back_img {
    width: 10px;
-   height: 200px;
+   height: 150px;
    background-color: white;
 
+}
+
+.ui-btn {
+   height: 30px;
 }
